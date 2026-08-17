@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Angeline Marie L. Trayfalgar - Instructional Designer, Trainer, and AI-Enabled Learning Specialist." />
+  <title>Angeline Marie L. Trayfalgar | Instructional Designer & Trainer</title>
+  <style>
+    :root {
+      --bg: #111111;
+      --surface: #4C1D95;
+      --surface-2: #111111;
+      --text: #FFFFFF;
+      --muted: #D9D9D9;
+      --line: rgba(255,255,255,.16);
+      --accent: #6D28D9;
+      --accent-2: #FFFFFF;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(17,17,17,.90);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.03em;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 650;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 100px 0 80px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(95,125,149,.14), transparent 28%),
+        radial-gradient(circle at 10% 10%, rgba(52,73,94,.08), transparent 25%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 55px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 750;
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.7rem, 6vw, 5.4rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+    .hero-title {
+      color: var(--accent);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 750;
+      margin-bottom: 22px;
+    }
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 0 0 30px;
+    }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 17px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+      font-weight: 750;
+      font-size: .93rem;
+    }
+    .btn.primary {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--accent);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .initials {
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 1.6rem;
+      font-weight: 850;
+      margin-bottom: 22px;
+    }
+    .hero-card h3 { margin: 0 0 12px; }
+    .hero-card p { font-size: .95rem; margin: 0; }
+
+    section { padding: 82px 0; }
+    .section-head { margin-bottom: 34px; }
+    .section-kicker {
+      color: var(--accent-2);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 850;
+      margin-bottom: 8px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.045em;
+      line-height: 1.08;
+    }
+    .section-intro {
+      color: var(--muted);
+      max-width: 800px;
+      margin-top: 13px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 30px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .profile-list { display: grid; gap: 14px; }
+    .profile-item strong { display: block; }
+    .profile-item span { color: var(--muted); }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .skill-card h3 { margin: 0 0 13px; font-size: 1.05rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: rgba(17,17,17,.35);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    .timeline { display: grid; gap: 20px; }
+    .role {
+      position: relative;
+      padding-left: 28px;
+      border-left: 2px solid var(--line);
+    }
+    .role::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .role h3 { margin: 0; font-size: 1.25rem; }
+    .role .meta {
+      color: var(--accent-2);
+      font-weight: 750;
+      margin: 3px 0 14px;
+    }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 8px; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .project {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+    }
+    .project-number {
+      font-size: .78rem;
+      color: var(--accent-2);
+      font-weight: 850;
+      letter-spacing: .1em;
+    }
+    .project h3 { margin: 8px 0 10px; font-size: 1.35rem; }
+    .project p { color: var(--muted); }
+    .project ul { margin-top: auto; }
+
+    .education {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .degree h3 { margin: 0; }
+    .degree .school { color: var(--accent-2); font-weight: 750; }
+    .degree p { color: var(--muted); margin-bottom: 0; }
+
+    .contact {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 50px;
+    }
+    .contact p { color: rgba(255,255,255,.82); max-width: 720px; }
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+    .contact-links a {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 35px 0 55px;
+      color: var(--muted);
+      font-size: .86rem;
+      text-align: center;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      font-weight: 800;
+      display: none;
+    }
+    .back-top.show { display: block; }
+
+
+    .case-link {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 0 10px;
+    }
+    .case-link:hover { text-decoration: underline; }
+
+
+    .headshot-card { overflow: hidden; }
+    .headshot-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(17,17,17,.35);
+      border: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+    .headshot-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid, .about, .skills, .projects, .education {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding-top: 70px; }
+      nav { align-items: flex-start; padding: 15px 0; flex-direction: column; }
+      .nav-links { gap: 12px 18px; }
+    }
+
+    @media print {
+      header, .buttons, .back-top { display: none !important; }
+      body { background: #FFFFFF; }
+      section, .hero { padding: 35px 0; }
+      .card, .hero-card { box-shadow: none; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#top">AMLT</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Licensed Professional Teacher · Master of Education</div>
+        <h1>Angeline Marie L. Trayfalgar</h1>
+        <div class="hero-title">Instructional Designer · Trainer · AI-Enabled Learning Specialist</div>
+        <p>
+          Learning professional with 10+ years of experience across education, training,
+          instructional content development, research, writing, and AI/LLM evaluation.
+          I design clear, practical learning experiences and translate complex information
+          into resources that learners can understand and apply.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="resume.pdf" target="_blank">View Resume</a>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:angeline.copytry@gmail.com">Contact Me</a>
+        </div>
+      </div>
+
+      <aside class="hero-card headshot-card">
+        <div class="headshot-frame">
+          <img
+            src="images/headshot.jpg"
+            alt="Professional headshot of Angeline Marie L. Trayfalgar"
+          />
+        </div>
+        <h3>What I bring to learning teams</h3>
+        <p>
+          Formal teaching expertise combined with training, knowledge transfer,
+          AI/LLM evaluation, instructional content development, research,
+          assessment design, and AI-assisted digital learning development.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Profile</div>
+        <h2>About me</h2>
+      </div>
+
+      <div class="about">
+        <div class="card profile-list">
+          <div class="profile-item">
+            <strong>Current focus</strong>
+            <span>Instructional Design, Training, Learning & Development, AI Training</span>
+          </div>
+          <div class="profile-item">
+            <strong>Professional background</strong>
+            <span>Education, training, research, writing, content development, AI/LLM evaluation</span>
+          </div>
+          <div class="profile-item">
+            <strong>Education</strong>
+            <span>Master of Education · Major in Reading, Language, and Literature</span>
+          </div>
+          <div class="profile-item">
+            <strong>Professional identity</strong>
+            <span>Licensed Professional Teacher</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <p>
+            I am a licensed professional teacher with 10+ years of experience in education,
+            training, instructional content development, research, writing, and AI/LLM evaluation.
+            My work combines structured instructional thinking with practical experience in
+            translating complex information into clear learning resources.
+          </p>
+          <p>
+            In AI/LLM practice, I evaluate model outputs, train analysts, support onboarding,
+            facilitate calibration, develop evaluation guidance, and contribute to rubrics and
+            quality assurance procedures. My education background includes designing learning
+            materials, activities, assessments, and resources for different learning environments.
+          </p>
+          <p>
+            I am particularly interested in Instructional Design, Learning Design, Learning &
+            Development, Corporate Training, Curriculum Development, Digital Learning, and
+            AI-enabled learning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Capabilities</div>
+        <h2>Core competencies</h2>
+      </div>
+
+      <div class="skills">
+        <article class="card skill-card">
+          <h3>Instructional Design & Learning</h3>
+          <div class="tags">
+            <span class="tag">Instructional Design</span>
+            <span class="tag">Lesson & Course Development</span>
+            <span class="tag">Learning Objectives</span>
+            <span class="tag">Learner-Centered Design</span>
+            <span class="tag">Training Materials</span>
+            <span class="tag">Learning Activities</span>
+            <span class="tag">Assessment Design</span>
+            <span class="tag">Rubrics</span>
+            <span class="tag">Curriculum Development</span>
+            <span class="tag">Knowledge Transfer</span>
+            <span class="tag">Digital Learning Content</span>
+            <span class="tag">AI-Assisted Learning Design</span>
+          </div>
+        </article>
+
+        <article class="card skill-card">
+          <h3>Training & Facilitation</h3>
+          <div class="tags">
+            <span class="tag">Instructor-Led Training</span>
+            <span class="tag">Team Onboarding</span>
+            <span class="tag">Training Facilitation</span>
+            <span class="tag">Coaching</span>
+            <span class="tag">Mentoring</span>
+            <span class="tag">Calibration Sessions</span>
+            <span class="tag">Knowledge Sharing</span>
+            <span class="tag">Quality Assurance Training</span>
+            <span class="tag">Training Documentation</span>
+            <span class="tag">Learner Support</span>
+          </div>
+        </article>
+
+        <article class="card skill-card">
+          <h3>AI & LLM Training</h3>
+          <div class="tags">
+            <span class="tag">LLM Output Evaluation</span>
+            <span class="tag">AI Response Assessment</span>
+            <span class="tag">Prompt Analysis</span>
+            <span class="tag">AI Hallucination Detection</span>
+            <span class="tag">Annotation Guidelines</span>
+            <span class="tag">Rating Calibration</span>
+            <span class="tag">AI Safety & Alignment</span>
+            <span class="tag">AI-Assisted Content</span>
+            <span class="tag">AI Training Workflows</span>
+          </div>
+        </article>
+
+        <article class="card skill-card">
+          <h3>Content, Research & Digital Learning</h3>
+          <div class="tags">
+            <span class="tag">Technical Writing</span>
+            <span class="tag">Academic Writing</span>
+            <span class="tag">Research</span>
+            <span class="tag">Information Structuring</span>
+            <span class="tag">Content Planning</span>
+            <span class="tag">Copyediting</span>
+            <span class="tag">Audience Analysis</span>
+            <span class="tag">Digital Content Development</span>
+            <span class="tag">SEO & Content Strategy</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">Content Management Systems</span>
+            <span class="tag">AI Writing & Analysis Tools</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Career</div>
+        <h2>Professional experience</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="card role">
+          <h3>Senior Analyst / LLM Trainer – AI Practice</h3>
+          <div class="meta">Innodata · 2025–Present</div>
+          <ul>
+            <li>Evaluate Large Language Model outputs for reasoning quality, factual accuracy, safety compliance, instruction adherence, and overall response quality.</li>
+            <li>Conduct training sessions for analysts on evaluation guidelines, annotation standards, task requirements, and quality expectations.</li>
+            <li>Support onboarding and knowledge transfer for new team members working on LLM evaluation workflows.</li>
+            <li>Translate complex evaluation guidelines into practical instructions, examples, and quality standards that analysts can consistently apply.</li>
+            <li>Lead and participate in calibration sessions to resolve interpretation differences and improve consistency among evaluators.</li>
+            <li>Provide structured feedback on annotation quality and identify recurring performance gaps requiring additional guidance or training.</li>
+            <li>Contribute to the development and refinement of evaluation rubrics, decision frameworks, annotation guidelines, and quality assurance procedures.</li>
+            <li>Identify hallucinations, reasoning gaps, safety issues, and instruction-following failures in AI-generated outputs.</li>
+            <li>Support continuous improvement of evaluation workflows through analysis of recurring errors and quality issues.</li>
+            <li>Mentor team members and provide clarification and guidance on complex evaluation scenarios.</li>
+          </ul>
+        </article>
+
+        <article class="card role">
+          <h3>Teacher III / School Research & Reading Coordinator</h3>
+          <div class="meta">Rafael B. Lacson Memorial High School · 2016–2025</div>
+          <ul>
+            <li>Designed and delivered instruction in Creative Writing, Technical Writing, Academic Writing, research, communication, and instructional technology for senior high school learners.</li>
+            <li>Developed learner-centered instructional materials, activities, exercises, and assessment resources based on learning objectives and student needs.</li>
+            <li>Designed learning resources for Emergency Learning Kits and Alternative Delivery Modes (ADM), adapting instructional content for different learning environments.</li>
+            <li>Guided learners through research, academic writing, information literacy, and communication projects.</li>
+            <li>Applied learner-centered and differentiated approaches to address varying levels of ability, engagement, and learning needs.</li>
+            <li>Served as School Research and Reading Coordinator, supporting research-related initiatives and academic development.</li>
+            <li>Mentored learners participating in writing and academic competitions at national and international levels.</li>
+            <li>Spearheaded and supported collaborative school projects involving teachers and learners.</li>
+            <li>Used instructional technology and digital resources to support teaching, learning, research, and content delivery.</li>
+            <li>Developed and adapted instructional resources based on learner performance, classroom needs, and delivery context.</li>
+          </ul>
+        </article>
+
+        <article class="card role">
+          <h3>Freelance Content Writer / Content Strategist / Social Media Manager</h3>
+          <div class="meta">Freelance · 2010–Present</div>
+          <ul>
+            <li>Develop research-based content across wellness, technology, education, and other specialized subject areas.</li>
+            <li>Translate complex information into clear, structured, audience-appropriate content.</li>
+            <li>Conduct research and organize information into logical content structures based on audience needs and intended purpose.</li>
+            <li>Develop content plans, topic frameworks, editorial strategies, and structured information resources.</li>
+            <li>Provide editorial feedback, revisions, and quality guidance to writers.</li>
+            <li>Led writers under a technology-focused content team by providing topic assignments, editorial direction, and feedback.</li>
+            <li>Collaborate with clients and teams to develop content calendars and long-term content strategies.</li>
+            <li>Develop web-based content and landing pages through content management platforms.</li>
+            <li>Apply keyword research, audience-intent analysis, and information structuring to improve content discoverability and usability.</li>
+            <li>Manage social media content and monitor audience engagement and content performance.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Portfolio</div>
+        <h2>Selected instructional design & training projects</h2>
+        <p class="section-intro">
+          Selected projects demonstrating instructional content development, training design,
+          digital learning concepts, assessment, and AI-assisted learning development.
+        </p>
+      </div>
+
+      <div class="projects">
+        <article class="card project">
+          <div class="project-number">01 · TRAINING DEVELOPMENT</div>
+          <h3>AI / LLM Annotation Training Program</h3>
+          <p><a class="case-link" href="case-ai-llm-annotation.html">View case study →</a></p>
+          <p>Structured training resources designed to help annotators understand AI evaluation tasks, annotation standards, error categories, and quality expectations.</p>
+          <ul>
+            <li>Training guidance and examples</li>
+            <li>Decision trees and practical scenarios</li>
+            <li>Calibration resources</li>
+            <li>Visual examples and knowledge checks</li>
+            <li>AI-generated image error identification</li>
+          </ul>
+        </article>
+
+        <article class="card project">
+          <div class="project-number">02 · DIGITAL LEARNING</div>
+          <h3>Digital Training Portal Development</h3>
+          <p><a class="case-link" href="case-digital-training-portal.html">View case study →</a></p>
+          <p>Web-based training concept organized around progressive learning, exploration, practice, and assessment.</p>
+          <ul>
+            <li>Learner flow and information architecture</li>
+            <li>Interactive training concepts</li>
+            <li>Visual examples and guided activities</li>
+            <li>Knowledge checks and feedback</li>
+            <li>AI-assisted prototyping</li>
+          </ul>
+        </article>
+
+        <article class="card project">
+          <div class="project-number">03 · COURSE DEVELOPMENT</div>
+          <h3>AI-Assisted Lesson Planning Course</h3>
+          <p><a class="case-link" href="case-ai-lesson-planning.html">View case study →</a></p>
+          <p>A practical course concept focused on helping educators use AI to support lesson planning while retaining pedagogical judgment.</p>
+          <ul>
+            <li>Practical educator workflows</li>
+            <li>AI-assisted planning resources</li>
+            <li>Application-focused learning content</li>
+            <li>Course organization and learner onboarding</li>
+          </ul>
+        </article>
+
+        <article class="card project">
+          <div class="project-number">04 · EDUCATIONAL TECHNOLOGY</div>
+          <h3>Educational Technology & Digital Learning Projects</h3>
+          <p><a class="case-link" href="case-educational-technology.html">View case study →</a></p>
+          <p>Digital learning concepts supporting reading practice, assessment, learner interaction, guided practice, and structured learning workflows.</p>
+          <ul>
+            <li>Learner workflows</li>
+            <li>Instructional modes</li>
+            <li>Practice activities</li>
+            <li>Content structures</li>
+            <li>AI-assisted prototyping</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Education</div>
+        <h2>Academic background</h2>
+      </div>
+
+      <div class="education">
+        <article class="card degree">
+          <h3>Master of Education</h3>
+          <div class="school">University of St. La Salle · 2020–2022</div>
+          <p>Major in Reading, Language, and Literature</p>
+        </article>
+
+        <article class="card degree">
+          <h3>Bachelor of Secondary Education</h3>
+          <div class="school">University of St. La Salle · 2009–2013</div>
+          <p>Major in English</p>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:20px;">
+        <strong>Professional credential</strong>
+        <p style="margin:6px 0 0;color:var(--muted);">Licensed Professional Teacher</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="section-kicker" style="color:rgba(255,255,255,.65);">Let's connect</div>
+        <h2>Interested in learning, training, and AI-enabled education?</h2>
+        <p>
+          I am open to opportunities in Instructional Design, Learning Design,
+          Learning & Development, Training, Curriculum Development, Digital Learning,
+          and AI Training.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:angeline.copytry@gmail.com">Email Me</a>
+          <a href="resume.pdf" target="_blank">View Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Angeline Marie L. Trayfalgar · Instructional Designer & Trainer
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const backTop = document.getElementById("backTop");
+  window.addEventListener("scroll", () => {
+    backTop.classList.toggle("show", window.scrollY > 500);
+  });
+
+  backTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+</body>
+</html>
